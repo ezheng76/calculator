@@ -1,0 +1,118 @@
+body{
+    padding: 0px;
+    margin: 0px;
+    background-color: #F9E0BB;
+    
+}
+.hide-scrollbar{
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.hide-scrollbar::-webkit-scrollbar{
+    display: none;
+}
+
+a, 
+a:visited, 
+a:hover, 
+a:active {
+    color: inherit;
+}
+
+.header{
+    text-align: center;
+    font-size: 70px;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.calculator{
+    border: 10px black solid;
+    border-radius: 20px;
+    background-color: #1f1f1f;
+
+
+    width: 400px;
+    height: 700px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    
+}
+
+.display{
+    border: 2px green solid;
+    border-radius: 20px;
+    color: white;
+    width: 350px;
+    height: 200px;
+    font-size: 60px;
+    position: relative;
+}
+
+.calculations{
+    position:absolute;
+    bottom:0;
+    right:22px;
+}
+
+.num-pad{
+    border-radius: 20px;
+    width: 350px;
+    height: 470px;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    column-gap: 8px;
+    justify-content: space-around;
+}
+
+.keys{
+    border-radius: 50%;
+    background-color: #3b3b3b;
+    color: white;
+    border: none;
+    width: 80px;
+    height: 80px;
+    font-size: 35px;
+}
+
+.num-pad #equal{
+    flex-grow: 1;
+    border-radius: 25px
+}
+
+.num-pad #divide,
+.num-pad #multiply,
+.num-pad #subtract,
+.num-pad #add,
+.num-pad #equal{
+    background-color: #FFC26F;
+}
+
+.num-pad #clear,
+.num-pad #change-sign,
+.num-pad #percent{
+    background-color: gray;
+}
+
+
+.footer{
+    position:relative;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    padding: 10px;
+    font-size: 20px;
+}
