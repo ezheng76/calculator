@@ -56,10 +56,10 @@ a:active {
     position: relative;
 }
 
-.calculations{
+.inputs{
     position:absolute;
     bottom:0;
-    right:22px;
+    right:10px;
 }
 
 .num-pad{
@@ -74,7 +74,7 @@ a:active {
     justify-content: space-around;
 }
 
-.keys{
+.num-pad button{
     border-radius: 50%;
     background-color: #3b3b3b;
     color: white;
