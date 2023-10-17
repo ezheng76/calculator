@@ -46,7 +46,7 @@ toolButtons.forEach((toolKey) => {
             resetAll();
             prevKey = toolKeyPressed;
         } else if (toolKeyPressed === "add"){
-            if(prevToolKey != null && prevToolKey != toolKey ){
+            if(prevToolKey != null && prevToolKey != toolKey && prevToolKey.target.id != "change-sign" && prevToolKey.target.id != "percent"){
                 toolKeyPressColorChange(prevToolKey,"#FFC26F", "white");
             }
 
@@ -68,7 +68,7 @@ toolButtons.forEach((toolKey) => {
             prevToolKey = toolKey;
             toolKeyPressColorChange(toolKey, "white","#FFC26F");
         } else if (toolKeyPressed === "subtract"){
-            if(prevToolKey != null && prevToolKey != toolKey){
+            if(prevToolKey != null && prevToolKey != toolKey && prevToolKey.target.id != "change-sign"&& prevToolKey.target.id != "percent"){
                 toolKeyPressColorChange(prevToolKey,"#FFC26F", "white");
             }
             if (prevKey === "add" || prevKey === "multiply" || prevKey === "divide"){
@@ -89,7 +89,7 @@ toolButtons.forEach((toolKey) => {
             prevToolKey = toolKey;
             toolKeyPressColorChange(toolKey, "white","#FFC26F");
         } else if (toolKeyPressed === "multiply"){
-            if(prevToolKey != null && prevToolKey != toolKey){
+            if(prevToolKey != null && prevToolKey != toolKey && prevToolKey.target.id != "change-sign" && prevToolKey.target.id != "percent"){
                 toolKeyPressColorChange(prevToolKey,"#FFC26F", "white");
             }
             
@@ -112,7 +112,7 @@ toolButtons.forEach((toolKey) => {
             prevToolKey = toolKey;
             toolKeyPressColorChange(toolKey, "white","#FFC26F");
         } else if (toolKeyPressed === "divide"){
-            if(prevToolKey != null && prevToolKey != toolKey){
+            if(prevToolKey != null && prevToolKey != toolKey && prevToolKey.target.id != "change-sign" && prevToolKey.target.id != "percent"){
                 toolKeyPressColorChange(prevToolKey,"#FFC26F", "white");
             }
 
@@ -133,6 +133,14 @@ toolButtons.forEach((toolKey) => {
             prevKey = toolKeyPressed;
             prevToolKey = toolKey;
             toolKeyPressColorChange(toolKey, "white","#FFC26F");
+        } else if (toolKeyPressed === "change-sign") {
+            numInput.innerHTML = changeSign(currNumber);
+            prevKey = toolKeyPressed;
+            prevToolKey = toolKey;
+        } else if (toolKeyPressed === "percent") {
+            numInput.innerHTML = percent(currNumber);
+            prevKey = toolKeyPressed;
+            prevToolKey = toolKey;
         } else if (toolKeyPressed === "equal"){
             if (num2 === null){
                 num2 = currNumber;
@@ -202,9 +210,19 @@ function multiply (num1 , num2){
     return num1 * num2;
 }
 
-function divide (){
+function divide (num1, num2){
     return num1 / num2;
 }   
+
+function changeSign (num){
+    num = parseFloat(num)
+    return -1 * num;
+}
+
+function percent (num){
+    num = parseFloat(num)
+    return num / 100;
+}
 
 function operate (num1, num2, operator){
     num1 = parseFloat(num1);
